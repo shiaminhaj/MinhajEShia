@@ -4,32 +4,28 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Opening Minhaj e Shia…</title>
-  <meta name="theme-color" content="#0D1620">
+  <meta name="theme-color" content="#F9F8F4">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500&family=Amiri&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500&family=DM+Sans:wght@400&family=Amiri&display=swap" rel="stylesheet">
 
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --scaffold:     #0D1620;
-      --surface:      #14202C;
-      --teal:         #00838F;
-      --teal-dark:    #4DD0E1;
-      --teal-soft:    rgba(0,131,143,0.10);
-      --gold:         #D4A574;
-      --gold-bright:  #C9A84C;
-      --border:       #2A3640;
-      --muted:        #7A8A98;
-      --on-surface:   #E6E1E5;
-      --text-dim:     rgba(230,225,229,0.32);
+      --ivory:    #F9F8F4;
+      --surface:  #FDFCFA;
+      --border:   #E8E2DA;
+      --text:     #1C1B1F;
+      --muted:    #78818C;
+      --teal:     #00838F;
+      --gold:     #BF8A4A;
     }
 
     body {
-      background: var(--scaffold);
-      color: var(--on-surface);
+      background: var(--ivory);
+      color: var(--text);
       font-family: 'Sora', sans-serif;
       min-height: 100vh;
       display: flex; flex-direction: column;
@@ -38,96 +34,86 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    body::before {
-      content: '';
-      position: fixed; inset: 0; z-index: -1;
-      pointer-events: none; opacity: 0.02;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='512' height='512' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
-      background-size: 256px 256px;
-    }
-
     .logo-ring {
-      width: 80px; height: 80px;
-      border: 1px solid rgba(212,165,116,0.25);
+      width: 72px; height: 72px;
+      border: 1px solid var(--border);
       border-radius: 50%;
       display: flex; align-items: center; justify-content: center;
-      margin: 0 auto 32px;
+      margin: 0 auto 28px;
       position: relative;
       animation: pulse 2.4s ease-in-out infinite;
     }
     .logo-ring::before {
       content: '';
       position: absolute; inset: 7px;
-      border: 1px solid rgba(0,131,143,0.3);
+      border: 1px solid rgba(0,131,143,0.2);
       border-radius: 50%;
     }
     .logo-ar {
       font-family: 'Amiri', serif;
-      font-size: 28px; color: var(--gold);
-      line-height: 1;
+      font-size: 26px; color: var(--gold); line-height: 1;
     }
 
     @keyframes pulse {
-      0%, 100% { box-shadow: 0 0 0 0 rgba(212,165,116,0.1); }
-      50% { box-shadow: 0 0 0 14px rgba(212,165,116,0); }
+      0%, 100% { box-shadow: 0 0 0 0 rgba(0,131,143,0.06); }
+      50% { box-shadow: 0 0 0 12px rgba(0,131,143,0); }
     }
 
     h1 {
-      font-size: 20px; font-weight: 400;
-      letter-spacing: 0.03em;
-      margin-bottom: 8px;
+      font-size: 18px; font-weight: 400;
+      margin-bottom: 6px;
     }
-
     .subtitle {
-      font-size: 13px; font-weight: 300;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 13px; font-weight: 400;
       color: var(--muted); line-height: 1.7;
-      margin-bottom: 36px;
+      margin-bottom: 32px;
     }
 
     .spinner {
-      width: 32px; height: 32px;
-      border: 2px solid rgba(0,131,143,0.15);
-      border-top-color: var(--teal-dark);
+      width: 28px; height: 28px;
+      border: 2px solid rgba(0,131,143,0.1);
+      border-top-color: var(--teal);
       border-radius: 50%;
       animation: spin 0.7s linear infinite;
-      margin: 0 auto 36px;
+      margin: 0 auto 32px;
     }
     @keyframes spin { to { transform: rotate(360deg); } }
 
     .stores {
-      display: flex; gap: 12px; flex-wrap: wrap; justify-content: center;
-      opacity: 0; transition: opacity 0.5s ease;
+      display: flex; gap: 10px; flex-wrap: wrap; justify-content: center;
+      opacity: 0; transition: opacity 0.4s ease;
     }
     .stores.visible { opacity: 1; }
 
     .store-btn {
-      display: inline-flex; align-items: center; gap: 10px;
-      padding: 12px 22px;
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 10px 20px;
       background: var(--surface);
       border: 1px solid var(--border);
       border-radius: 10px;
-      color: var(--on-surface);
+      color: var(--text);
       text-decoration: none;
+      font-family: 'DM Sans', sans-serif;
       font-size: 13px; font-weight: 400;
-      letter-spacing: 0.03em;
-      transition: border-color 0.2s, background 0.2s, transform 0.2s;
+      transition: border-color 0.2s, transform 0.15s;
     }
     .store-btn:hover {
       border-color: var(--teal);
-      background: rgba(0,131,143,0.06);
       transform: translateY(-1px);
     }
-    .store-btn svg { width: 18px; height: 18px; flex-shrink: 0; }
+    .store-btn svg { width: 16px; height: 16px; flex-shrink: 0; }
 
     .status {
+      font-family: 'DM Sans', sans-serif;
       font-size: 12px; color: var(--muted);
-      margin-top: 28px; letter-spacing: 0.03em;
+      margin-top: 24px;
     }
-    .status span { color: var(--teal-dark); }
+    .status span { color: var(--teal); }
 
     @media (max-width: 480px) {
       .stores { flex-direction: column; align-items: center; }
-      .store-btn { width: 100%; max-width: 260px; justify-content: center; }
+      .store-btn { width: 100%; max-width: 240px; justify-content: center; }
     }
   </style>
 </head>
@@ -144,36 +130,24 @@
 
   <div class="stores" id="stores">
     <a class="store-btn" href="https://play.google.com/store/apps/details?id=com.minhajeshia" target="_blank" rel="noopener">
-      <svg viewBox="0 0 24 24" fill="none">
-        <path d="M3 20.5V3.5c0-.85.45-1.57 1.1-1.96L14.58 12 4.1 22.46A2.18 2.18 0 013 20.5z" fill="#4DD0E1"/>
-        <path d="M17.73 14.17L6.27 20.78l9.46-9.46 2 2.85z" fill="#00838F"/>
-        <path d="M20.66 11.12l-2.93-1.68-2.15 2.15 2.15 2.15 2.93-1.68c.56-.32.56-1.22 0-1.54v.6z" fill="#7A8A98"/>
-        <path d="M6.27 3.22l11.46 6.61-2 2.85-9.46-9.46z" fill="#D4A574"/>
-      </svg>
+      <svg viewBox="0 0 24 24" fill="none"><path d="M3 20.5V3.5c0-.85.45-1.57 1.1-1.96L14.58 12 4.1 22.46A2.18 2.18 0 013 20.5z" fill="#00838F" opacity=".6"/><path d="M17.73 14.17L6.27 20.78l9.46-9.46 2 2.85z" fill="#00838F" opacity=".4"/><path d="M20.66 11.12l-2.93-1.68-2.15 2.15 2.15 2.15 2.93-1.68c.56-.32.56-1.22 0-1.54v.6z" fill="#78818C" opacity=".4"/><path d="M6.27 3.22l11.46 6.61-2 2.85-9.46-9.46z" fill="#BF8A4A" opacity=".5"/></svg>
       Google Play
     </a>
     <a class="store-btn" href="https://apps.apple.com/app/minhaj-e-shia/id0000000000" target="_blank" rel="noopener">
-      <svg viewBox="0 0 24 24" fill="var(--on-surface)">
-        <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.37 2.83zM13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
-      </svg>
+      <svg viewBox="0 0 24 24" fill="#1C1B1F"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.37 2.83zM13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
       App Store
     </a>
     <a class="store-btn" href="https://github.com/shiaminhaj/MinhajEShia/releases/latest" target="_blank" rel="noopener">
-      <svg viewBox="0 0 24 24" fill="var(--on-surface)">
-        <path d="M3 12V6.75L9.75 5.87V12H3zM9.75 13.12V19.13L3 18.25V13.12H9.75zM10.88 5.72L21 4V12H10.88V5.72zM21 13.12V21L10.88 19.28V13.12H21z"/>
-      </svg>
+      <svg viewBox="0 0 24 24" fill="#1C1B1F"><path d="M3 12V6.75L9.75 5.87V12H3zM9.75 13.12V19.13L3 18.25V13.12H9.75zM10.88 5.72L21 4V12H10.88V5.72zM21 13.12V21L10.88 19.28V13.12H21z"/></svg>
       Windows
     </a>
   </div>
 
-  <p class="status" id="status">
-    Redirecting… <span id="cd">2</span>s
-  </p>
+  <p class="status" id="status">Redirecting… <span id="cd">2</span>s</p>
 
   <script>
     const params = new URLSearchParams(window.location.search);
-    const path = params.get('path') || '';
-    window.location.href = 'minhajeshia://' + path;
+    window.location.href = 'minhajeshia://' + (params.get('path') || '');
 
     let sec = 2;
     const cd = document.getElementById('cd');
@@ -182,14 +156,12 @@
     const spinner = document.getElementById('spinner');
 
     const t = setInterval(() => {
-      sec--;
-      if (cd) cd.textContent = sec;
-      if (sec <= 0) {
+      if (--sec <= 0) {
         clearInterval(t);
         spinner.style.display = 'none';
         stores.classList.add('visible');
         status.textContent = 'App not installed? Get it below:';
-      }
+      } else if (cd) cd.textContent = sec;
     }, 1000);
   </script>
 </body>
